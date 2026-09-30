@@ -1,0 +1,16 @@
+ATUALIZAÇÃO - CONEXÃO PRIMEIRO + CADASTRO COMPLETO
+
+1. A tela Conexão voltou a ser a primeira tela após o login.
+2. A ordem das abas voltou para: Conexão, Perfil, Ajustes.
+3. O cadastro agora solicita:
+   - CPF
+   - Nome completo
+   - Data de nascimento (DD/MM/AAAA)
+   - Telefone com DDD
+   - E-mail
+   - Senha
+   - Confirmação de senha
+4. cadastrar.php agora valida e grava data_nascimento e telefone_usuario.
+5. login.php continua retornando esses campos para o AuthContext.
+6. A tela Perfil continua usando os dados do usuário autenticado, sem alterar o layout novo.
+7. O banco já possui as colunas data_nascimento e telefone_usuario no arquivo banco_de_dados.sql.

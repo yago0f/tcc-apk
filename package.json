@@ -1,0 +1,49 @@
+{
+  "name": "rebirth-prosthetics-mobile",
+  "version": "2.1.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "start:clear": "expo start --clear",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "check": "expo-doctor",
+    "verify:bluetooth": "node scripts/verify-bluetooth-integration.cjs",
+    "android:dev": "expo run:android",
+    "prebuild:android": "expo prebuild --platform android --clean",
+    "verify:syntax": "node scripts/parse-js.cjs",
+    "audit": "node scripts/audit-project.cjs",
+    "verify": "npm run verify:syntax && npm run audit && npm run verify:bluetooth && npm run verify:gradle-fix && npm run verify:startup",
+    "postinstall": "node scripts/fix-gradle-foojay.cjs",
+    "verify:gradle-fix": "node scripts/test-fix-gradle-foojay.cjs",
+    "verify:startup": "node scripts/test-api-startup.cjs"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-navigation/bottom-tabs": "^7.15.5",
+    "@react-navigation/native": "^7.2.3",
+    "@react-navigation/native-stack": "^7.14.13",
+    "expo": "~55.0.6",
+    "expo-localization": "~55.0.17",
+    "expo-status-bar": "~55.0.4",
+    "expo-system-ui": "~55.0.20",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-native": "0.83.2",
+    "react-native-safe-area-context": "~5.6.2",
+    "react-native-screens": "~4.23.0",
+    "react-native-web": "^0.21.0",
+    "axios": "^1.13.6",
+    "expo-dev-client": "~55.0.40",
+    "react-native-bluetooth-classic": "1.73.0-rc.17"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}

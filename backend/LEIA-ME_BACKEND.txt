@@ -1,0 +1,25 @@
+BACKEND PHP + MYSQL — LARAGON
+=============================
+
+Copie a pasta:
+backend\rebirth-api
+
+para:
+C:\laragon\www\rebirth-api
+
+Substitua os arquivos existentes.
+
+Depois no Laragon:
+1. Stop All
+2. Start All
+
+Teste no computador:
+http://localhost/rebirth-api/diagnostico_cadastro.php
+
+Deve retornar JSON com "sucesso": true.
+
+No Expo Go do celular, teste também:
+http://IP-DO-COMPUTADOR/rebirth-api/diagnostico_cadastro.php
+
+O celular e o computador precisam estar na mesma rede Wi-Fi.
+Não use localhost no celular.

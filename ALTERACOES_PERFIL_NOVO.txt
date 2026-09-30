@@ -1,0 +1,16 @@
+REBIRTHPROSTHETICS — PERFIL REDESENHADO
+
+Alterações desta versão:
+- Tela de Perfil refeita com base no layout de referência enviado.
+- Saudação dinâmica usando o primeiro nome do usuário autenticado.
+- Nome, e-mail, telefone, data de nascimento e ID continuam vindos da sessão/login.
+- Cartão de identidade com avatar, ID e acesso ao QR Code.
+- Cartão principal da prótese com status, bateria, modelo e acesso aos detalhes.
+- Cards de uso diário, último uso e conexões.
+- Informações pessoais reorganizadas em grade.
+- Ações rápidas para Ajustes e Sair da conta.
+- Navegação inferior redesenhada e reorganizada para Perfil, Conexão e Ajustes.
+- Perfil agora é a tela inicial após entrar no aplicativo.
+- Novo layout continua compatível com tema claro/escuro e português/inglês/espanhol.
+
+O backend PHP/Laragon, login, cadastro, autenticação e estrutura do banco foram preservados.

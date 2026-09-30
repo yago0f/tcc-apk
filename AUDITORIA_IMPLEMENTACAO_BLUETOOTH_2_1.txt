@@ -1,0 +1,67 @@
+REBIRTHPROSTHETICS 2.1 — AUDITORIA DA INTEGRAÇÃO HC-05
+Data da revisão: 17/09/2026
+
+ESCOPO IMPLEMENTADO
+- Android + Bluetooth Classic SPP (HC-05).
+- Lista somente dispositivos já pareados.
+- HC-05 destacado como recomendado.
+- Conexão sempre manual.
+- Dispositivo escolhido/conectado salvo como preferido por endereço Bluetooth.
+- Preferido aparece primeiro/destacado na próxima sessão, sem auto-conexão.
+- Controle da prótese com apenas ABRIR e FECHAR.
+- ABRIR envia exatamente A; FECHAR envia exatamente C.
+- UI atualiza de forma otimista para MÃO ABERTA / MÃO FECHADA.
+- Falha de escrita preserva o estado visual e exibe o aviso aprovado.
+- Suporte PT/EN/ES preservado.
+- Fontes pequenas aumentadas de forma conservadora.
+- Aba Conexão continua a primeira após login.
+- Bluetooth isolado de PHP/MySQL.
+- Logout desmonta a camada Bluetooth e tenta encerrar socket ativo.
+
+ARQUIVOS PRINCIPAIS NOVOS/ALTERADOS
+- App.js
+- app.json
+- eas.json
+- package.json
+- src/services/bluetoothService.js
+- src/context/BluetoothContext.js
+- src/Telas/Tela1/index.js
+- src/i18n/translations.js
+- src/Telas/Principal/index.js (somente fontes)
+- src/Telas/Tela2/index.js (somente fontes)
+- src/Telas/Tela3/index.js (fontes + identificação HC-05)
+- arduino/RebirthProsthetics_HC05_Servo.ino
+- BLUETOOTH_HC05_ANDROID.md
+- README.md
+- COMO_EXECUTAR.txt
+- scripts/verify-bluetooth-integration.cjs
+- scripts/parse-js.cjs
+- scripts/audit-project.cjs
+
+VERIFICAÇÕES EXECUTADAS NESTE AMBIENTE
+- Parsing JS/JSX: 13 arquivos sem diagnóstico de sintaxe.
+- Auditoria de imports relativos: sem caminhos quebrados.
+- PT/EN/ES: paridade de chaves de tradução validada.
+- Chamadas t('...'): todas as chaves usadas existem.
+- Integração Bluetooth: 46 verificações estáticas aprovadas.
+- Backend embutido x pasta para Laragon: byte a byte idênticos.
+- Backend atual x backend original 4.1: sem alterações.
+- PHP: todos os 5 arquivos .php passaram em php -l.
+- Protocolo Arduino/app: A = abrir; C = fechar; nenhum comando B no app/sketch.
+
+LIMITAÇÃO DO AMBIENTE DE GERAÇÃO
+O npm install não pôde ser concluído aqui porque o ambiente de execução não conseguiu acessar o registro npm dentro do tempo disponível. Portanto, a compilação nativa Android e o teste físico com um HC-05 real precisam ser executados no seu computador/celular após npm install. Isso não foi mascarado como teste concluído.
+
+TESTE FINAL RECOMENDADO NO SEU PC
+1. npm install
+2. npm run verify
+3. npx expo-doctor
+4. npx expo prebuild --platform android --clean
+5. npx expo run:android --device
+6. Parear HC-05 no Android.
+7. Abrir o app -> Conexão -> permitir Dispositivos próximos.
+8. Confirmar que HC-05 aparece destacado.
+9. Conectar manualmente.
+10. Tocar ABRIR: servo deve ir para 0°.
+11. Tocar FECHAR: servo deve ir para 180°.
+12. Fechar/abrir o app e confirmar que HC-05 continua marcado como preferido sem conectar sozinho.

@@ -1,0 +1,26 @@
+REBIRTHPROSTHETICS 2.1 — COMO EXECUTAR
+
+BACKEND
+1. Copie backend\rebirth-api para C:\laragon\www\rebirth-api.
+2. Abra o Laragon e clique em Start All.
+3. Importe C:\laragon\www\rebirth-api\banco_de_dados.sql no HeidiSQL quando necessário.
+4. Teste http://localhost/rebirth-api/teste.php.
+5. Crie .env na pasta do aplicativo:
+   EXPO_PUBLIC_API_URL=http://IP-DO-PC/rebirth-api
+
+BLUETOOTH HC-05
+6. No Android, pareie o HC-05 nas configurações Bluetooth (PIN comum: 1234 ou 0000).
+7. Na pasta do aplicativo, execute:
+   npm install
+8. O Expo Go NÃO suporta o módulo Bluetooth Classic deste projeto.
+9. Gere a development build Android:
+   npx expo prebuild --platform android --clean
+   npx expo run:android --device
+10. Abra a aba Conexão, permita acesso a dispositivos próximos e toque em Atualizar.
+11. Escolha o HC-05 e toque em Conectar.
+12. Abrir envia A; Fechar envia C.
+
+Depois de instalar a development build, para alterações apenas JavaScript:
+   npx expo start --clear
+
+Leia BLUETOOTH_HC05_ANDROID.md para detalhes e solução de problemas.

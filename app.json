@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "RebirthProsthetics",
+    "slug": "rebirth-prosthetics",
+    "version": "2.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "backgroundColor": "#0B0F2A",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-localization",
+      "expo-system-ui",
+      "expo-dev-client",
+      "./plugins/withLocalApi.cjs"
+    ],
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B0F2A"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "backgroundColor": "#0B0F2A"
+    },
+    "android": {
+      "userInterfaceStyle": "automatic",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B0F2A",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "usesCleartextTraffic": true,
+      "package": "com.rebirthprosthetics.app",
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "rebirthprosthetics",
+    "extra": {
+      "eas": {
+        "projectId": "d6009386-0bf0-4c8d-bc0f-06a3d83d54bf"
+      }
+    }
+  }
+}
