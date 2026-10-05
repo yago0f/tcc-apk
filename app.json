@@ -11,7 +11,9 @@
       "expo-localization",
       "expo-system-ui",
       "expo-dev-client",
-      "./plugins/withLocalApi.cjs"
+      "./plugins/withLocalApi.cjs",
+      "expo-font",
+      "expo-build-properties"
     ],
     "splash": {
       "image": "./assets/splash-icon.png",
@@ -46,6 +48,7 @@
       "eas": {
         "projectId": "d6009386-0bf0-4c8d-bc0f-06a3d83d54bf"
       }
-    }
+    },
+    "owner": "yggzin"
   }
 }
